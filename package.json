@@ -9,7 +9,12 @@
   "author": "r.s",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.29.3",
     "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-csslint": "^1.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "sass": "^1.62.1"
   }
