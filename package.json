@@ -17,6 +17,8 @@
     "gulp-plumber": "^1.2.1",
     "gulp-pug": "^5.0.0",
     "gulp-sass": "^5.1.0",
-    "sass": "^1.62.1"
+    "sass": "^1.62.1",
+    "webpack": "^5.83.1",
+    "webpack-stream": "^7.0.0"
   }
 }

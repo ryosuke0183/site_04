@@ -12,15 +12,18 @@ import pug from 'gulp-pug';
 
 import browsersync from 'browser-sync';
 
+import webpackStream from 'webpack-stream';
+import webpack from 'webpack';
+import webpackConfig from './webpack.config.js';
+
 const pugTask = () => {
     return gulp.src(['./src/pug/**/*.pug', '!./src/pug/**/_*.pug'])
         .pipe(plumber())
         .pipe(pug({
-            pretty: ' ',
+            pretty: true,
             basedir: './src/pug'
         }))
         .pipe(gulp.dest('./dist'))
-        // .pipe(browsersync.reload({ stream: true }))
 }
 
 const sassTask = () => {
@@ -34,7 +37,11 @@ const sassTask = () => {
         .pipe(cssLint())
         .pipe(prefixer())
         .pipe(gulp.dest('./dist/css'))
-        // .pipe(browsersync.reload({ stream: true }))
+}
+
+const bundleJSTask = () => {
+    return webpackStream(webpackConfig, webpack)
+        .pipe(gulp.dest('./dist/js'));
 }
 
 const serverInit = () => {
@@ -44,16 +51,21 @@ const serverInit = () => {
             index: 'index.html',
             directory: true
         },
-        startPath: '/index.html'
+        startPath: '/index.html',
+        notify: false
     })
+}
+
+const reloadTask = (cb) => {
+    browsersync.reload();
+    cb();
 }
 
 const watchTask = () => {
     gulp.watch('./src/scss/**/*.scss', sassTask);
     gulp.watch('./src/pug/**/*.pug', pugTask);
-    gulp.watch('./src/**', () => {
-        browsersync.reload({ stream: true })
-    });
+    gulp.watch('./src/js/**/*.js', bundleJSTask);
+    gulp.watch('./src/**/*', reloadTask);
 }
 
 export default gulp.parallel(watchTask, serverInit);
