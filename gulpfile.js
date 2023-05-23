@@ -1,23 +1,56 @@
 import gulp from 'gulp';
+import plumber from 'gulp-plumber';
+
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
-import gulpPlumber from 'gulp-plumber';
-import gulpAutoPrefixer from 'gulp-autoprefixer';
-import gulpPrefixer from 'gulp-autoprefixer';
-import cssLint from 'gulp-csslint';
 const sass = gulpSass(dartSass);
 
-const sassTask = () => {
-    return gulp.src('./src/scss/style.scss')
-        .pipe(gulpPlumber())
-        .pipe(sass.sync({
-            outputStyle: 'expanded'
+import cssLint from 'gulp-csslint';
+import prefixer from 'gulp-autoprefixer';
+
+import pug from 'gulp-pug';
+
+import browsersync from 'browser-sync';
+
+const pugTask = () => {
+    return gulp.src(['./src/pug/**/*.pug', '!./src/pug/**/_*.pug'])
+        .pipe(plumber())
+        .pipe(pug({
+            pretty: ' ',
+            basedir: './src/pug'
         }))
-        .pipe(cssLint())
-        .pipe(gulpPrefixer())
-        .pipe(gulp.dest('./dist/css'));
+        .pipe(gulp.dest('./dist'))
+        .pipe(browsersync.reload({ stream: true }))
 }
 
-export function sassW() {
-    gulp.watch('./src/scss/style.scss', sassTask);
-} 
+const sassTask = () => {
+    return gulp.src(['./src/scss/**/*.scss', '!./src/scss/**/_*.scss'])
+        .pipe(plumber())
+        .pipe(
+            sass.sync({
+                outputStyle: 'expanded'
+            }).on('error', sass.logError)
+        )
+        .pipe(cssLint())
+        .pipe(prefixer())
+        .pipe(gulp.dest('./dist/css'))
+        .pipe(browsersync.reload({ stream: true }))
+}
+
+const serverTask = () => {
+    browsersync({
+        server: {
+            baseDir: './dist',
+            index: 'index.html',
+            directory: true
+        },
+        startPath: '/index.html'
+    })
+}
+
+const watchTask = () => {
+    gulp.watch('./src/scss/**/*.scss', sassTask);
+    gulp.watch('./src/pug/**/*.pug', pugTask);
+}
+
+export default gulp.parallel(watchTask, serverTask);
