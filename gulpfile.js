@@ -20,7 +20,7 @@ const pugTask = () => {
             basedir: './src/pug'
         }))
         .pipe(gulp.dest('./dist'))
-        .pipe(browsersync.reload({ stream: true }))
+        // .pipe(browsersync.reload({ stream: true }))
 }
 
 const sassTask = () => {
@@ -34,10 +34,10 @@ const sassTask = () => {
         .pipe(cssLint())
         .pipe(prefixer())
         .pipe(gulp.dest('./dist/css'))
-        .pipe(browsersync.reload({ stream: true }))
+        // .pipe(browsersync.reload({ stream: true }))
 }
 
-const serverTask = () => {
+const serverInit = () => {
     browsersync({
         server: {
             baseDir: './dist',
@@ -51,6 +51,9 @@ const serverTask = () => {
 const watchTask = () => {
     gulp.watch('./src/scss/**/*.scss', sassTask);
     gulp.watch('./src/pug/**/*.pug', pugTask);
+    gulp.watch('./src/**', () => {
+        browsersync.reload({ stream: true })
+    });
 }
 
-export default gulp.parallel(watchTask, serverTask);
+export default gulp.parallel(watchTask, serverInit);
