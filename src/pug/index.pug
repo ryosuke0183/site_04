@@ -1,12 +1,13 @@
-html(lang="ja")
-    head
-        include includes/_head.pug
-    
-    body
-        include includes/_header.pug
-        
-        main
-            p.text テキスト
+extends layouts/_default
+append value 
+    -const title = 'site_04'
+    -const description = 'ディスクリプション'
+    -const keyword = 'キーワード キーワード'
+    -const path = '.'
 
-        include includes/_footer.pug
-        
+block header 
+    include ./includes/_header.pug
+block main 
+
+block footer
+    include ./includes/_footer.pug

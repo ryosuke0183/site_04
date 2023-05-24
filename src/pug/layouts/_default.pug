@@ -1,0 +1,14 @@
+block value 
+include ../config/_config.pug
+doctype html 
+html(lang="ja")
+    head 
+        include ../includes/_head
+        include ../includes/_favicon
+        block head
+
+    body 
+        block header 
+        main
+            block main 
+        block footer 
