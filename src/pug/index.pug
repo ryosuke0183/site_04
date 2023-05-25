@@ -1,13 +1,18 @@
 extends layouts/_default
-append value 
+append value
     -const title = 'site_04'
     -const description = 'ディスクリプション'
     -const keyword = 'キーワード キーワード'
     -const path = '.'
 
-block header 
+block header
     include ./includes/_header.pug
-block main 
+        append headerCont
+            include ./components/_hamburger.pug
+            +nav('nav')
+block main
 
 block footer
     include ./includes/_footer.pug
+        append headerCont
+            +nav('f-nav')

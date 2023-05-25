@@ -1,0 +1,18 @@
+{
+    "workbench.colorTheme": "Tomorrow Night Blue",
+    "files.trimTrailingWhitespace": true,
+
+    // material icon theme
+    "workbench.iconTheme": "material-icon-theme",
+
+    // prettier
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "prettier.tabWidth": 4,
+    "prettier.singleQuote": true,
+
+    // jade(pug)
+    "[jade]": {
+        "editor.defaultFormatter": ""
+    }
+}
