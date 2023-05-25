@@ -1,11 +1,7 @@
-body {
-
-}
-
-a {
-    text-decoration: none;
-}
-
-.text {
-    color: blue;
-}
+@use "./base/reset";
+@use "./base/base";
+@use "./modules/nav";
+@use "./modules/hamburger";
+@use "./modules/btn";
+@use "./includes/header";
+@use "./pages/index";

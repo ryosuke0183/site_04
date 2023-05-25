@@ -1,7 +1,234 @@
-a {
-  text-decoration: none;
+@charset "UTF-8";
+/***
+    The new CSS reset - version 1.8.4 (last updated 14.2.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
 }
 
-.text {
-  color: blue;
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  -moz-appearance: revert;
+       appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::-moz-placeholder {
+  color: unset;
+}
+::placeholder {
+  color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+}
+
+body {
+  font-family: Noto Sans JP, sans-serif;
+  font-weight: 400;
+}
+body * {
+  letter-spacing: 0em;
+}
+
+img {
+  max-width: 100%;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  background-color: white;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  z-index: 1000;
+  transition: 0.7s;
+}
+@media screen and (min-width: 9999px) {
+  .nav {
+    display: block;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    position: static;
+  }
+}
+.nav__lists {
+  display: block;
+}
+@media screen and (min-width: 9999px) {
+  .nav__lists {
+    display: flex;
+    justify-content: center;
+    justify-content: none;
+  }
+}
+.nav__list {
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 9999px) {
+  .nav__list {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+}
+.nav__list:last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 9999px) {
+  .nav__list:last-child {
+    margin-right: 0;
+  }
+}
+.nav__link {
+  color: #222222;
+  font-size: 1.875rem;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+}
+@media screen and (min-width: 9999px) {
+  .nav__link {
+    font-size: 1rem;
+  }
+}
+.nav.js_clicked {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0%);
+  transition: 0.7s;
+}
+
+.hamburger {
+  width: 65px;
+  height: 30px;
+  position: fixed;
+  top: 24px;
+  right: 20px;
+  z-index: 2000;
+}
+.hamburger__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.hamburger__line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+.hamburger__text {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  min-width: 110px;
+  text-align: center;
+  border-radius: 100vh;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  line-height: 1;
+}
+.btn--grey {
+  padding: 10px 15px;
+  color: white;
+  background-color: #9b9b9b;
 }
