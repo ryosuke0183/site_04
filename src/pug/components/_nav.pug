@@ -1,6 +1,6 @@
 mixin nav(className)
     nav(class=`${className}`)
-        ul(class=`${className}__lists`): each n in nav
+        ul(class=`${className}__lists`): each n in confNav
             li(class=`${className}__list`)
                 h2(class=`${className}__h2`) #{n.title}
                 p(class=`${className}__subtitle`) #{n.subtitle}

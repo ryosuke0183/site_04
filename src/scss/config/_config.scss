@@ -1,4 +1,5 @@
-$breakpoints :(xs: 0,
+$breakpoints: (
+    xs: 0,
     sm: 576px,
     md: 768px,
     lg: 992px,
@@ -17,9 +18,12 @@ $cBg1: #fcf9e7;
 
 // fonts
 $fontFamilies: (
-    base: #{'Noto Sans JP', sans-serif},
-    main: #{'Roboto', sans-serif},
-    accent: #{'Monoton', cursive},
+    base: #{'Zen Maru Gothic',
+    sans-serif},
+    main: #{'Roboto',
+    sans-serif},
+    accent: #{'Rock Salt',
+    cursive},
 );
 
 // weights
@@ -29,5 +33,5 @@ $weights: (
     regular: 400,
     medium: 500,
     bold: 700,
-    black: 900
+    black: 900,
 );

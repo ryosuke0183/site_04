@@ -107,7 +107,7 @@ meter {
 }
 
 body {
-  font-family: Noto Sans JP, sans-serif;
+  font-family: Zen Maru Gothic, sans-serif;
   font-weight: 400;
 }
 body * {
@@ -231,4 +231,77 @@ img {
   padding: 10px 15px;
   color: white;
   background-color: #9b9b9b;
+}
+
+.footer {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.footer__inner {
+  max-width: 1800px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+@media screen and (min-width: 992px) {
+  .footer__inner {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .f-nav__lists {
+    display: flex;
+  }
+}
+.f-nav__h2 {
+  margin-bottom: 15px;
+  font-family: Rock Salt, cursive;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1;
+}
+@media screen and (min-width: 1200px) {
+  .f-nav__h2 {
+    font-size: 1.25rem;
+  }
+}
+.f-nav__subtitle {
+  margin-bottom: 40px;
+  font-family: Zen Maru Gothic, sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1;
+}
+.f-nav__list {
+  margin-bottom: 60px;
+}
+.f-nav__list:last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 1200px) {
+  .f-nav__list {
+    margin-right: 7.2674418605%;
+    margin-bottom: 0;
+  }
+  .f-nav__list:last-child {
+    margin-right: 0;
+  }
+}
+.f-nav__link {
+  font-family: Zen Maru Gothic, sans-serif;
+  font-weight: 500;
+}
+.f-nav__link:before {
+  margin-right: 10px;
+  font: var(--fa-font-solid);
+  content: "\f105";
+}
+.f-nav__subnav-list {
+  margin-bottom: 25px;
+}
+.f-nav__subnav-list:last-child {
+  margin-bottom: 0;
 }

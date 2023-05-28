@@ -1,0 +1,68 @@
+@use '../forwards' as *;
+
+.footer {
+    padding-top: 90px;
+    padding-bottom: 90px;
+
+    &__inner {
+        @include inner(1720px);
+    }
+}
+.f-nav {
+    &__lists {
+        @include mediaMin(xl) {
+            display: flex;
+        }
+    }
+
+    &__h2 {
+        margin-bottom: 15px;
+        @include font(accent, regular);
+        font-size: rem(16px);
+        line-height: 1;
+
+        @include mediaMin(xl) {
+            font-size: rem(20px);
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 40px;
+        @include font(base, bold);
+        font-size: rem(14px);
+        line-height: 1;
+    }
+
+    &__list {
+        margin-bottom: 60px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @include mediaMin(xl) {
+            margin-right: percentage(div(125, 1720));
+            margin-bottom: 0;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__link {
+        @include font(base, medium);
+
+        &:before {
+            margin-right: 10px;
+            @include fontAwesome('\f105');
+        }
+    }
+
+    &__subnav-list {
+        margin-bottom: 25px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
