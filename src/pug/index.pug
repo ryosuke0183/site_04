@@ -11,6 +11,48 @@ block header
             include ./components/_hamburger.pug
             +nav('nav')
 block main
+    div.mv
+        h1.mv__h1 HELLO RECORD
+        picture.mv__picture
+            source.mv__source(srcset=`${imgPath}mv/main_pc_1.jpg` media="(min-width:640px)")
+            img.mv__img(src=`${imgPath}mv/main_1.jpg` alt="レコードの写真")
+    .index
+        section.articles
+            h2.h2
+            p.h2-subtitle
+            .articles__inner
+                article.articles__article.article
+                    .article__img-wrapper
+                        img.article__img(src=`${imgPath}article/article_1.jpg`, alt="レコードの写真")
+                    h3.article__h3 HELLO! あなたの今一番オススメのレコードは？
+                    ul.article__ul
+                        li.article__li レコード
+                        li.article__li レトロ
+                article.articles__article.article
+                    .article__img-wrapper
+                        img.article__img(src=`${imgPath}article/article_1.jpg`, alt="レコードの写真")
+                    h3.article__h3 HELLO! あなたの今一番オススメのレコードは？
+                    ul.article__ul
+                        li.article__li レコード
+                        li.article__li レトロ
+                article.articles__article.article
+                    .article__img-wrapper
+                        img.article__img(src=`${imgPath}article/article_1.jpg`, alt="レコードの写真")
+                    h3.article__h3 HELLO! あなたの今一番オススメのレコードは？
+                    ul.article__ul
+                        li.article__li レコード
+                        li.article__li レトロ
+                article.articles__article.article
+                    .article__img-wrapper
+                        img.article__img(src=`${imgPath}article/article_1.jpg`, alt="レコードの写真")
+                    h3.article__h3 HELLO! あなたの今一番オススメのレコードは？
+                    ul.article__ul
+                        li.article__li レコード
+                        li.article__li レトロ
+        section.sidebar
+            .sidebar__inner
+                .sidebar__article
+                    img(src=`${imgPath}article/article_1.jpg`, alt="")
 
 block footer
     include ./includes/_footer.pug

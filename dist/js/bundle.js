@@ -1,0 +1,1 @@
+(()=>{"use strict";window.addEventListener("DOMContentLoaded",(function(){!function(e,t){try{const n=t;e.addEventListener("click",(function(){n.classList.toggle("js-clicked")}))}catch(e){console.log(e)}}(document.querySelector("#hamburger"),document.querySelector(".nav"))}))})();

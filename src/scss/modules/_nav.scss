@@ -1,9 +1,7 @@
 @use '../forwards' as *;
 
 .nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     width: 100%;
     height: 100%;
     padding: 40px;
@@ -17,55 +15,72 @@
     z-index: 1000;
     transition: 0.7s;
 
-    @include mediaMin(drawer) {
-        display: block;
-        width: auto;
-        padding: 0;
-        background-color: transparent;
-        transform: none;
-        opacity: 1;
-        visibility: visible;
-        position: static;
-    }
-
     &__lists {
-        display: block;
-        
-        @include mediaMin(drawer) {
-            display: flex;
-            justify-content: center;
-            justify-content: none;
-        }
+        display: flex;
+        flex-wrap: wrap;
     }
 
     &__list {
-        margin-bottom: 20px;
-        
-        @include mediaMin(drawer) {
+        flex: 0 0 100%;
+        margin-bottom: 80px;
+
+        @include mediaMin(md) {
+            flex: 0 0 calc((100% - 20px) / 2);
             margin-right: 20px;
-            margin-bottom: 0;
         }
 
-        &:last-child {
-            margin-bottom: 0;
+        @include mediaMin(lg) {
+            flex: 0 0 auto;
+            margin-right: percentage(div(125, 1720));
+        }
 
-            @include mediaMin(drawer) {
+        &:nth-child(2n) {
+            @include mediaMin(md) {
+                margin-right: 0;
+            }
+
+            @include mediaMin(lg) {
+                margin-right: percentage(div(125, 1720));
+            }
+        }
+
+        &:nth-child(4n) {
+            @include mediaMin(lg) {
                 margin-right: 0;
             }
         }
     }
 
+    &__h2 {
+        margin-bottom: 15px;
+        font-size: rem(20px);
+        @include font(accent, regular);
+        line-height: 1;
+    }
+
+    &__subtitle {
+        margin-bottom: 40px;
+        font-size: rem(14px);
+        @include font(base, bold);
+        line-height: 1;
+    }
+
     &__link {
-        color: $cText;
-        font-size: rem(30px);
-        @include font(main, medium);
-    
-        @include mediaMin(drawer) {
-            font-size: rem(16px);
+        &:before {
+            margin-right: 10px;
+            @include fontAwesome('\f105');
         }
     }
 
-    &.js_clicked {
+    &__subnav-list {
+        margin-bottom: 25px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &.js-clicked {
         opacity: 1;
         visibility: visible;
         transform: translateY(0%);

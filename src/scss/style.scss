@@ -1,8 +1,11 @@
 @use './base/reset';
 @use './base/base';
+@use './modules/inner';
 @use './modules/nav';
 @use './modules/hamburger';
 @use './modules/btn';
+@use './modules/mv';
+@use './modules/article';
 @use './includes/header';
 @use './includes/footer';
 @use './pages/index';

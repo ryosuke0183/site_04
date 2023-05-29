@@ -1,4 +1,4 @@
-@use "../forwards" as *;
+@use '../forwards' as *;
 
 .hamburger {
     width: 65px;
@@ -7,6 +7,7 @@
     top: 24px;
     right: 20px;
     z-index: 2000;
+    cursor: pointer;
 
     &__btn {
         display: flex;
@@ -15,6 +16,7 @@
         flex-direction: column;
         width: 100%;
         height: 100%;
+        cursor: pointer;
     }
 
     &__line {

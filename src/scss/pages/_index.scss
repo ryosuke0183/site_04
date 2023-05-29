@@ -1,1 +1,27 @@
 @use '../forwards' as *;
+
+.index {
+    display: flex;
+    @include inner(1720px);
+}
+
+.articles {
+    flex: 0 0 percentage(div(1100, 1720));
+    margin-right: 100px;
+
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__article {
+        flex: 0 0 auto;
+        width: calc((100% - (40px * 2)) / 3);
+        margin-right: 40px;
+        margin-bottom: 40px;
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }
+}

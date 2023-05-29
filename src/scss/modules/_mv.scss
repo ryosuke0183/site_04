@@ -1,0 +1,33 @@
+@use '../forwards' as *;
+
+.mv {
+    position: relative;
+
+    &__h1 {
+        color: white;
+        @include font(accent, regular);
+        font-size: rem(24px);
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translate(0, -50%);
+        z-index: 1;
+
+        @include mediaMin(sm) {
+            font-size: rem(30px);
+        }
+
+        @include mediaMin(md) {
+            font-size: rem(48px);
+        }
+
+        @include mediaMin(lg) {
+            font-size: rem(60px);
+            left: percentage(div(110, 1920));
+        }
+
+        @include mediaMin(xl) {
+            font-size: rem(70px);
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@use '../forwards' as *;
+
+.inner-1200 {
+    @include inner(1200px);
+}
+
+.inner-1720 {
+    @include inner(1720px);
+}
