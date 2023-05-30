@@ -1,13 +1,27 @@
 @use '../forwards' as *;
 
 .index {
-    display: flex;
     @include inner(1720px);
+
+    @include mediaMin(lg) {
+        display: flex;
+    }
 }
 
 .articles {
-    flex: 0 0 percentage(div(1100, 1720));
-    margin-right: 100px;
+    @include mediaMin(lg) {
+        flex: 0 0 percentage(div(1100, 1720));
+        margin-right: 100px;
+    }
+
+    &__h2,
+    &__h2-subtitle {
+        text-align: center;
+
+        @include mediaMin(md) {
+            text-align: left;
+        }
+    }
 
     &__inner {
         display: flex;
@@ -16,12 +30,43 @@
 
     &__article {
         flex: 0 0 auto;
-        width: calc((100% - (40px * 2)) / 3);
-        margin-right: 40px;
-        margin-bottom: 40px;
+        width: 100%;
+        max-width: 400px;
+        margin-right: auto;
+        margin-bottom: 60px;
+        margin-left: auto;
+
+        @include mediaMin(md) {
+            width: calc((100% - 20px) / 2);
+            max-width: 100%;
+            margin-right: 20px;
+            margin-bottom: 120px;
+            margin-left: 0;
+        }
+
+        @include mediaMin(lg) {
+            width: calc((100% - (40px * 2)) / 3);
+            margin-right: 40px;
+        }
+
+        &:nth-child(2n) {
+            @include mediaMin(md) {
+                margin-right: 0;
+            }
+
+            @include mediaMin(lg) {
+                margin-right: 40px;
+            }
+        }
 
         &:nth-child(3n) {
-            margin-right: 0;
+            @include mediaMin(lg) {
+                margin-right: 0;
+            }
         }
+    }
+
+    &__btn {
+        text-align: center;
     }
 }

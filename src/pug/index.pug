@@ -18,8 +18,8 @@ block main
             img.mv__img(src=`${imgPath}mv/main_1.jpg` alt="レコードの写真")
     .index
         section.articles
-            h2.h2
-            p.h2-subtitle
+            h2.articles__h2.h2 PICKUP
+            p.articles__h2-subtitle.h2-subtitle ピックアップ
             .articles__inner
                 article.articles__article.article
                     .article__img-wrapper
@@ -49,10 +49,16 @@ block main
                     ul.article__ul
                         li.article__li レコード
                         li.article__li レトロ
-        section.sidebar
-            .sidebar__inner
-                .sidebar__article
-                    img(src=`${imgPath}article/article_1.jpg`, alt="")
+            .articles__btn
+                a.btn(href="#") MORE
+
+        section.sidebars
+            h2.sidebars__h2.h2 REGULAR
+            p.sidebars__h2-subtitle.h2-subtitle レギュラー
+            .sidebars__inner
+                .sidebars__article
+                    img.sidebars__img(src=`${imgPath}sidebar/sidebar_1.jpg`, alt="")
+                    h3.sidebars__h3 「外出」と「音楽」
 
 block footer
     include ./includes/_footer.pug

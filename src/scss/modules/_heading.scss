@@ -1,0 +1,39 @@
+@use '../forwards' as *;
+
+.h2 {
+    margin-bottom: 20px;
+    font-size: rem(20px);
+    @include font(accent, regular);
+    line-height: 1;
+
+    @include mediaMin(sm) {
+        font-size: rem(24px);
+    }
+
+    @include mediaMin(md) {
+        font-size: rem(28px);
+    }
+
+    @include mediaMin(lg) {
+        font-size: rem(32px);
+    }
+
+    @include mediaMin(xl) {
+        font-size: rem(40px);
+    }
+
+    &-subtitle {
+        margin-bottom: 30px;
+        @include font(base, bold);
+        font-size: rem(12px);
+        line-height: 1;
+
+        @include mediaMin(md) {
+            margin-bottom: 50px;
+        }
+
+        @include mediaMin(lg) {
+            margin-bottom: 70px;
+        }
+    }
+}

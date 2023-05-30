@@ -1,0 +1,7 @@
+@use '../forwards' as *;
+
+.sidebar {
+    &__img {
+        width: 100%;
+    }
+}

@@ -1,0 +1,46 @@
+@use '../forwards' as *;
+
+.sidebars {
+    &__h2,
+    &__h2-subtitle {
+        text-align: center;
+
+        @include mediaMin(lg) {
+            text-align: left;
+        }
+    }
+
+    &__article {
+        max-width: 400px;
+        margin-right: auto;
+        margin-bottom: 60px;
+        margin-left: auto;
+
+        @include mediaMin(lg) {
+            max-width: 100%;
+            margin-right: 0;
+            margin-bottom: 120px;
+            margin-left: 0;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        margin-bottom: 24px;
+        border-radius: 20px;
+    }
+
+    &__h3 {
+        font-size: rem(18px);
+        @include font(base, bold);
+        text-align: center;
+
+        @include mediaMin(lg) {
+            text-align: left;
+        }
+
+        @include mediaMin(xl) {
+            font-size: rem(20px);
+        }
+    }
+}
