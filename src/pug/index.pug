@@ -11,54 +11,44 @@ block header
             include ./components/_hamburger.pug
             +nav('nav')
 block main
-    div.mv
+    .mv
         h1.mv__h1 HELLO RECORD
         picture.mv__picture
             source.mv__source(srcset=`${imgPath}mv/main_pc_1.jpg` media="(min-width:640px)")
             img.mv__img(src=`${imgPath}mv/main_1.jpg` alt="レコードの写真")
     .index
-        section.articles
-            h2.articles__h2.h2 PICKUP
-            p.articles__h2-subtitle.h2-subtitle ピックアップ
-            .articles__inner
-                article.articles__article.article
-                    .article__img-wrapper
-                        img.article__img(src=`${imgPath}article/article_1.jpg`, alt="レコードの写真")
-                    h3.article__h3 HELLO! あなたの今一番オススメのレコードは？
-                    ul.article__ul
-                        li.article__li レコード
-                        li.article__li レトロ
-                article.articles__article.article
-                    .article__img-wrapper
-                        img.article__img(src=`${imgPath}article/article_1.jpg`, alt="レコードの写真")
-                    h3.article__h3 HELLO! あなたの今一番オススメのレコードは？
-                    ul.article__ul
-                        li.article__li レコード
-                        li.article__li レトロ
-                article.articles__article.article
-                    .article__img-wrapper
-                        img.article__img(src=`${imgPath}article/article_1.jpg`, alt="レコードの写真")
-                    h3.article__h3 HELLO! あなたの今一番オススメのレコードは？
-                    ul.article__ul
-                        li.article__li レコード
-                        li.article__li レトロ
-                article.articles__article.article
-                    .article__img-wrapper
-                        img.article__img(src=`${imgPath}article/article_1.jpg`, alt="レコードの写真")
-                    h3.article__h3 HELLO! あなたの今一番オススメのレコードは？
-                    ul.article__ul
-                        li.article__li レコード
-                        li.article__li レトロ
-            .articles__btn
-                a.btn(href="#") MORE
+        .index__inner
+            section.articles
+                h2.articles__h2.h2 PICKUP
+                p.articles__h2-subtitle.h2-subtitle ピックアップ
+                .articles__inner: each article in confArticles
+                    article.articles__article.article
+                        .article__img-wrapper
+                            img.article__img(src=`${article.img}` alt="レコードの写真")
+                        h3.article__h3 #{article.title}
+                        ul.article__ul: each tag in article.tags
+                            li.article__li #{tag}
+                .articles__btn
+                    a.btn(href="#") MORE
 
-        section.sidebars
-            h2.sidebars__h2.h2 REGULAR
-            p.sidebars__h2-subtitle.h2-subtitle レギュラー
-            .sidebars__inner
-                .sidebars__article
-                    img.sidebars__img(src=`${imgPath}sidebar/sidebar_1.jpg`, alt="")
-                    h3.sidebars__h3 「外出」と「音楽」
+            section.sidebars
+                h2.sidebars__h2.h2 REGULAR
+                p.sidebars__h2-subtitle.h2-subtitle レギュラー
+                .sidebars__inner: each sidebar in confSidebar
+                    .sidebars__sidebar
+                        img.sidebars__img(src=`${sidebar.img}` alt="")
+                        h3.sidebars__h3 #{sidebar.title}
+
+        section.events
+            .events__inner
+                h2.events__h2.h2 EVENTS
+                p.events__h2-subtitle.h2-subtitle イベント
+                ul.events__slider.slider: each event in confEvents
+                    li.slider__list
+                        a.slider__link(href=event.link)
+                            img.slider__img(src=`${event.img}`, alt="イベント情報")
+                            time.slider__time #{event.time}
+                            h3.slider__h3 #{event.title}
 
 block footer
     include ./includes/_footer.pug

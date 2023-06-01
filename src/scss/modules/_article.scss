@@ -21,12 +21,16 @@
 }
 
 .article {
+    display: flex;
+    flex-direction: column;
+
     &__img-wrapper {
         margin-bottom: 24px;
         @include aspectRatio(1, 1);
     }
 
     &__img {
+        object-fit: cover;
         border-radius: 20px;
     }
 
@@ -46,6 +50,7 @@
 
     &__ul {
         display: flex;
+        margin-top: auto;
     }
 
     &__li {

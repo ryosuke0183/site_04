@@ -1,15 +1,23 @@
 @use '../forwards' as *;
 
-.index {
-    @include inner(1720px);
+main {
+    overflow-x: hidden;
+}
 
-    @include mediaMin(lg) {
-        display: flex;
+.index {
+    &__inner {
+        margin-bottom: 120px;
+        @include inner(600px);
+
+        @include mediaMin(xl) {
+            display: flex;
+            @include inner(1720px);
+        }
     }
 }
 
 .articles {
-    @include mediaMin(lg) {
+    @include mediaMin(xl) {
         flex: 0 0 percentage(div(1100, 1720));
         margin-right: 100px;
     }
@@ -18,7 +26,7 @@
     &__h2-subtitle {
         text-align: center;
 
-        @include mediaMin(md) {
+        @include mediaMin(xl) {
             text-align: left;
         }
     }
@@ -26,6 +34,10 @@
     &__inner {
         display: flex;
         flex-wrap: wrap;
+
+        @include mediaMin(md) {
+            margin-bottom: -60px;
+        }
     }
 
     &__article {
@@ -44,7 +56,7 @@
             margin-left: 0;
         }
 
-        @include mediaMin(lg) {
+        @include mediaMin(xl) {
             width: calc((100% - (40px * 2)) / 3);
             margin-right: 40px;
         }
@@ -54,19 +66,45 @@
                 margin-right: 0;
             }
 
-            @include mediaMin(lg) {
+            @include mediaMin(xl) {
                 margin-right: 40px;
             }
         }
 
         &:nth-child(3n) {
-            @include mediaMin(lg) {
+            @include mediaMin(xl) {
                 margin-right: 0;
             }
         }
     }
 
     &__btn {
+        margin-bottom: 120px;
         text-align: center;
+
+        @include mediaMin(xl) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.sidebars {
+    &__h2,
+    &__h2-subtitle {
+        text-align: center;
+
+        @include mediaMin(xl) {
+            text-align: left;
+        }
+    }
+}
+
+.events {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background-color: #f5f5f5;
+
+    &__inner {
+        @include inner(1720px);
     }
 }

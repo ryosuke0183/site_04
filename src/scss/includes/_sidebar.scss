@@ -1,22 +1,13 @@
 @use '../forwards' as *;
 
 .sidebars {
-    &__h2,
-    &__h2-subtitle {
-        text-align: center;
-
-        @include mediaMin(lg) {
-            text-align: left;
-        }
-    }
-
-    &__article {
+    &__sidebar {
         max-width: 400px;
         margin-right: auto;
         margin-bottom: 60px;
         margin-left: auto;
 
-        @include mediaMin(lg) {
+        @include mediaMin(md) {
             max-width: 100%;
             margin-right: 0;
             margin-bottom: 120px;
@@ -35,12 +26,9 @@
         @include font(base, bold);
         text-align: center;
 
-        @include mediaMin(lg) {
-            text-align: left;
-        }
-
         @include mediaMin(xl) {
             font-size: rem(20px);
+            text-align: left;
         }
     }
 }

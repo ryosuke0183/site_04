@@ -16,6 +16,9 @@
         <meta property="og:locale" content="ja_JP">
         <link rel="stylesheet" href="./css/style.css">
         <script src="./js/bundle.js"></script><link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <link rel="icon" href="./favicon.ico">
     </head>
     <body>
@@ -70,52 +73,120 @@
                 </picture>
             </div>
             <div class="index">
-                <section class="articles">
-                    <h2 class="articles__h2 h2">PICKUP</h2>
-                    <p class="articles__h2-subtitle h2-subtitle">ピックアップ</p>
-                    <div class="articles__inner">
-                        <article class="articles__article article">
-                            <div class="article__img-wrapper"><img class="article__img" src="./assets/images/article/article_1.jpg" alt="レコードの写真"></div>
-                            <h3 class="article__h3">HELLO! あなたの今一番オススメのレコードは？</h3>
-                            <ul class="article__ul">
-                                <li class="article__li">レコード</li>
-                                <li class="article__li">レトロ</li>
-                            </ul>
-                        </article>
-                        <article class="articles__article article">
-                            <div class="article__img-wrapper"><img class="article__img" src="./assets/images/article/article_1.jpg" alt="レコードの写真"></div>
-                            <h3 class="article__h3">HELLO! あなたの今一番オススメのレコードは？</h3>
-                            <ul class="article__ul">
-                                <li class="article__li">レコード</li>
-                                <li class="article__li">レトロ</li>
-                            </ul>
-                        </article>
-                        <article class="articles__article article">
-                            <div class="article__img-wrapper"><img class="article__img" src="./assets/images/article/article_1.jpg" alt="レコードの写真"></div>
-                            <h3 class="article__h3">HELLO! あなたの今一番オススメのレコードは？</h3>
-                            <ul class="article__ul">
-                                <li class="article__li">レコード</li>
-                                <li class="article__li">レトロ</li>
-                            </ul>
-                        </article>
-                        <article class="articles__article article">
-                            <div class="article__img-wrapper"><img class="article__img" src="./assets/images/article/article_1.jpg" alt="レコードの写真"></div>
-                            <h3 class="article__h3">HELLO! あなたの今一番オススメのレコードは？</h3>
-                            <ul class="article__ul">
-                                <li class="article__li">レコード</li>
-                                <li class="article__li">レトロ</li>
-                            </ul>
-                        </article>
-                    </div>
-                    <div class="articles__btn"><a class="btn" href="#">MORE</a></div>
-                </section>
-                <section class="sidebars">
-                    <h2 class="sidebars__h2 h2">REGULAR</h2>
-                    <p class="sidebars__h2-subtitle h2-subtitle">レギュラー</p>
-                    <div class="sidebars__inner">
-                        <div class="sidebars__article"><img class="sidebars__img" src="./assets/images/sidebar/sidebar_1.jpg" alt="">
-                            <h3 class="sidebars__h3">「外出」と「音楽」</h3>
+                <div class="index__inner">
+                    <section class="articles">
+                        <h2 class="articles__h2 h2">PICKUP</h2>
+                        <p class="articles__h2-subtitle h2-subtitle">ピックアップ</p>
+                        <div class="articles__inner">
+                            <article class="articles__article article">
+                                <div class="article__img-wrapper"><img class="article__img" src="./assets/images/articles/article_1.jpg" alt="レコードの写真"></div>
+                                <h3 class="article__h3">HELLO! あなたの今一番オススメのレコードは？</h3>
+                                <ul class="article__ul">
+                                    <li class="article__li">レコード</li>
+                                    <li class="article__li">レトロ</li>
+                                </ul>
+                            </article>
+                            <article class="articles__article article">
+                                <div class="article__img-wrapper"><img class="article__img" src="./assets/images/articles/article_2.jpg" alt="レコードの写真"></div>
+                                <h3 class="article__h3">好きなジャケット写真で部屋を飾ろう。</h3>
+                                <ul class="article__ul">
+                                    <li class="article__li">レコード</li>
+                                    <li class="article__li">レトロ</li>
+                                </ul>
+                            </article>
+                            <article class="articles__article article">
+                                <div class="article__img-wrapper"><img class="article__img" src="./assets/images/articles/article_3.jpg" alt="レコードの写真"></div>
+                                <h3 class="article__h3">80’sに流行った「あの曲」。あなたはいくつ知ってる？</h3>
+                                <ul class="article__ul">
+                                    <li class="article__li">レコード</li>
+                                    <li class="article__li">レトロ</li>
+                                    <li class="article__li">80s</li>
+                                </ul>
+                            </article>
+                            <article class="articles__article article">
+                                <div class="article__img-wrapper"><img class="article__img" src="./assets/images/articles/article_4.jpg" alt="レコードの写真"></div>
+                                <h3 class="article__h3">HELLO! あなたの今一番オススメのレコードは？</h3>
+                                <ul class="article__ul">
+                                    <li class="article__li">レコード</li>
+                                    <li class="article__li">レトロ</li>
+                                </ul>
+                            </article>
+                            <article class="articles__article article">
+                                <div class="article__img-wrapper"><img class="article__img" src="./assets/images/articles/article_5.jpg" alt="レコードの写真"></div>
+                                <h3 class="article__h3">好きなジャケット写真で部屋を飾ろう。</h3>
+                                <ul class="article__ul">
+                                    <li class="article__li">レコード</li>
+                                    <li class="article__li">レトロ</li>
+                                </ul>
+                            </article>
+                            <article class="articles__article article">
+                                <div class="article__img-wrapper"><img class="article__img" src="./assets/images/articles/article_6.jpg" alt="レコードの写真"></div>
+                                <h3 class="article__h3">80’sに流行った「あの曲」。あなたはいくつ知ってる？</h3>
+                                <ul class="article__ul">
+                                    <li class="article__li">レコード</li>
+                                    <li class="article__li">レトロ</li>
+                                    <li class="article__li">80s</li>
+                                </ul>
+                            </article>
+                            <article class="articles__article article">
+                                <div class="article__img-wrapper"><img class="article__img" src="./assets/images/articles/article_7.jpg" alt="レコードの写真"></div>
+                                <h3 class="article__h3">HELLO! あなたの今一番オススメのレコードは？</h3>
+                                <ul class="article__ul">
+                                    <li class="article__li">レコード</li>
+                                    <li class="article__li">レトロ</li>
+                                </ul>
+                            </article>
+                            <article class="articles__article article">
+                                <div class="article__img-wrapper"><img class="article__img" src="./assets/images/articles/article_8.jpg" alt="レコードの写真"></div>
+                                <h3 class="article__h3">好きなジャケット写真で部屋を飾ろう。</h3>
+                                <ul class="article__ul">
+                                    <li class="article__li">レコード</li>
+                                    <li class="article__li">レトロ</li>
+                                </ul>
+                            </article>
+                            <article class="articles__article article">
+                                <div class="article__img-wrapper"><img class="article__img" src="./assets/images/articles/article_9.jpg" alt="レコードの写真"></div>
+                                <h3 class="article__h3">80’sに流行った「あの曲」。あなたはいくつ知ってる？</h3>
+                                <ul class="article__ul">
+                                    <li class="article__li">レコード</li>
+                                    <li class="article__li">レトロ</li>
+                                    <li class="article__li">80s</li>
+                                </ul>
+                            </article>
                         </div>
+                        <div class="articles__btn"><a class="btn" href="#">MORE</a></div>
+                    </section>
+                    <section class="sidebars">
+                        <h2 class="sidebars__h2 h2">REGULAR</h2>
+                        <p class="sidebars__h2-subtitle h2-subtitle">レギュラー</p>
+                        <div class="sidebars__inner">
+                            <div class="sidebars__sidebar"><img class="sidebars__img" src="./assets/images/sidebar/sidebar_1.jpg" alt="">
+                                <h3 class="sidebars__h3">「外出」と「音楽」</h3>
+                            </div>
+                            <div class="sidebars__sidebar"><img class="sidebars__img" src="./assets/images/sidebar/sidebar_2.jpg" alt="">
+                                <h3 class="sidebars__h3">「食事」と「音楽」</h3>
+                            </div>
+                            <div class="sidebars__sidebar"><img class="sidebars__img" src="./assets/images/sidebar/sidebar_3.jpg" alt="">
+                                <h3 class="sidebars__h3">「部屋」と「音楽」</h3>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <section class="events">
+                    <div class="events__inner">
+                        <h2 class="events__h2 h2">EVENTS</h2>
+                        <p class="events__h2-subtitle h2-subtitle">イベント</p>
+                        <ul class="events__slider slider">
+                            <li class="slider__list"><a class="slider__link" href="#"><img class="slider__img" src="./assets/images/events/event_1.jpg" alt="イベント情報">
+                                    <time class="slider__time"></time>
+                                    <h3 class="slider__h3">90's HIPHOPで盛り上がろう!「HELLO 90's MIX イベント！」</h3></a></li>
+                            <li class="slider__list"><a class="slider__link" href="#"><img class="slider__img" src="./assets/images/events/event_2.jpg" alt="イベント情報">
+                                    <time class="slider__time"></time>
+                                    <h3 class="slider__h3">月曜からJAZZ...。「HELLO MIDNIGHT JAZZ Vol.01」</h3></a></li>
+                            <li class="slider__list"><a class="slider__link" href="#"><img class="slider__img" src="./assets/images/events/event_3.jpg" alt="イベント情報">
+                                    <time class="slider__time"></time>
+                                    <h3 class="slider__h3">ちょっと大人なT.G.I.F。「HELLO SMOOTH R&amp;B NIGHT」 </h3></a></li>
+                        </ul>
                     </div>
                 </section>
             </div>
