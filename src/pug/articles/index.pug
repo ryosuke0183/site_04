@@ -1,0 +1,45 @@
+extends ../layouts/_default
+append value
+    -const title = 'site_04'
+    -const description = 'ディスクリプション'
+    -const keyword = 'キーワード キーワード'
+    -const path = '..'
+
+block main
+    main.articles-page
+        .main
+            .main__inner.cols
+                .cols__l
+                    h1.articles-page__h1 これは投稿ページです
+                    p.articles-page__p
+                        | テキストテキストテキストテキストテキストテキストテキスト
+                        | テキストテキストテキストテキストテキストテキストテキスト
+                        | テキストテキストテキストテキストテキストテキストテキスト
+                    p.articles-page__p
+                        | テキストテキストテキストテキストテキストテキストテキスト
+                        | テキストテキストテキストテキストテキストテキストテキスト
+                        | テキストテキストテキストテキストテキストテキストテキスト
+                    h2.articles-page__h2 テキストテキストテキストテキストテキスト
+                    p.articles-page__p
+                        | テキストテキストテキストテキストテキストテキストテキスト
+                        | テキストテキストテキストテキストテキストテキストテキスト
+                        | テキストテキストテキストテキストテキストテキストテキスト
+                        | テキストテキストテキストテキストテキストテキストテキスト
+                    .articles-page__flex
+                        img.articles-page__flex-img(src=`${imgPath}articles/article_2.jpg`)
+                        p.articles-page__flex-body
+                            | テキストテキストテキストテキストテキストテキストテキスト
+                            | テキストテキストテキストテキストテキストテキストテキスト
+                            | テキストテキストテキストテキストテキストテキストテキスト
+                            | テキストテキストテキストテキストテキストテキストテキスト
+                    h2.articles-page__h2 テキストテキストテキストテキストテキスト
+                    p.articles-page__p
+                        | テキストテキストテキストテキストテキストテキストテキスト
+                        | テキストテキストテキストテキストテキストテキストテキスト
+                        | テキストテキストテキストテキストテキストテキストテキスト
+                        | テキストテキストテキストテキストテキストテキストテキスト
+                        | テキストテキストテキストテキストテキストテキストテキスト
+                .cols__r
+                    include ../includes/_sidebars
+
+            include ../includes/_events

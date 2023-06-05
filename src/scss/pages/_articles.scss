@@ -1,0 +1,58 @@
+@use '../forwards' as *;
+
+.articles-page,
+.events-page {
+    &__h1 {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid black;
+        font-size: rem(22px);
+        @include font(base, medium);
+        @include mediaMin(md) {
+            font-size: rem(26px);
+        }
+    }
+
+    &__h2 {
+        margin-top: 90px;
+        margin-bottom: 20px;
+        font-size: rem(20px);
+        @include font(base, medium);
+        @include mediaMin(md) {
+            font-size: rem(22px);
+        }
+    }
+
+    &__p {
+        margin-bottom: 30px;
+    }
+
+    &__flex {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        padding: 20px;
+        background-color: rgb(245, 245, 245);
+        border-radius: 10px;
+
+        @include mediaMin(sm) {
+            display: flex;
+        }
+    }
+
+    &__flex-img {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        margin-left: auto;
+        border-radius: 10px;
+
+        @include mediaMin(sm) {
+            width: 50%;
+            margin-right: 20px;
+            margin-bottom: 0;
+        }
+    }
+}

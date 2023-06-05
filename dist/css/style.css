@@ -261,7 +261,6 @@ img {
 }
 
 .mv {
-  margin-bottom: 80px;
   position: relative;
 }
 .mv__h1 {
@@ -522,7 +521,10 @@ main {
   overflow-x: hidden;
 }
 
-.index__inner {
+.main {
+  margin-top: 90px;
+}
+.main__inner {
   margin-bottom: 120px;
   max-width: 680px;
   margin-right: auto;
@@ -531,13 +533,14 @@ main {
   padding-left: 20px;
 }
 @media screen and (min-width: 992px) {
-  .index__inner {
+  .main__inner {
     padding-right: 40px;
     padding-left: 40px;
   }
 }
+
 @media screen and (min-width: 1200px) {
-  .index__inner {
+  .cols {
     display: flex;
     max-width: 1800px;
     margin-right: auto;
@@ -547,18 +550,18 @@ main {
   }
 }
 @media screen and (min-width: 1200px) and (min-width: 992px) {
-  .index__inner {
+  .cols {
     padding-right: 40px;
     padding-left: 40px;
   }
 }
-
 @media screen and (min-width: 1200px) {
-  .articles {
+  .cols__l {
     flex: 0 0 63.9534883721%;
     margin-right: 100px;
   }
 }
+
 .articles__h2, .articles__h2-subtitle {
   text-align: center;
 }
@@ -649,5 +652,63 @@ main {
   .events__inner {
     padding-right: 40px;
     padding-left: 40px;
+  }
+}
+
+.articles-page__h1 {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
+  font-size: 1.375rem;
+  font-family: Zen Maru Gothic, sans-serif;
+  font-weight: 500;
+}
+@media screen and (min-width: 768px) {
+  .articles-page__h1 {
+    font-size: 1.625rem;
+  }
+}
+.articles-page__h2 {
+  margin-top: 90px;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+  font-family: Zen Maru Gothic, sans-serif;
+  font-weight: 500;
+}
+@media screen and (min-width: 768px) {
+  .articles-page__h2 {
+    font-size: 1.375rem;
+  }
+}
+.articles-page__p {
+  margin-bottom: 30px;
+}
+.articles-page__flex {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 20px;
+  background-color: rgb(245, 245, 245);
+  border-radius: 10px;
+}
+@media screen and (min-width: 576px) {
+  .articles-page__flex {
+    display: flex;
+  }
+}
+.articles-page__flex-img {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+  border-radius: 10px;
+}
+@media screen and (min-width: 576px) {
+  .articles-page__flex-img {
+    width: 50%;
+    margin-right: 20px;
+    margin-bottom: 0;
   }
 }

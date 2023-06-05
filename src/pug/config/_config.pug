@@ -1,7 +1,7 @@
 -const cssPath = path + '/css/';
 -const jsPath = path + '/js/';
 -const imgPath = path + '/assets/images/';
--const domain = 'https://site_04/';
+-const domain = 'http://localhost:3000/';
 -const ogImg = domain + '/assets/images/ogp.jpg';
 
 //- navigation
@@ -13,7 +13,7 @@
             subnav: [
                 {
                     title: 'すべての記事を見る',
-                    link: '#',
+                    link: `${domain}index.html`,
                 }
             ]
         },
@@ -23,16 +23,16 @@
             subnav: [
                 {
                     title: '「外出」と「音楽」',
-                    link: '#',
+                    link: `${domain}sidebars/index.html`,
 
                 },
                 {
                     title: '「食事」と「音楽」',
-                    link: '#',
+                    link: `${domain}sidebars/index.html`,
                 },
                 {
                     title: '「部屋」と「音楽」',
-                    link: '#',
+                    link: `${domain}sidebars/index.html`,
                 }
             ]
         },
@@ -42,7 +42,7 @@
             subnav: [
                 {
                     title: 'イベント情報',
-                    link: '#',
+                    link: `${domain}events/index.html`,
                 }
             ]
         },
@@ -52,11 +52,11 @@
             subnav: [
                 {
                     title: '<i class="fa-brands fa-instagram"></i>インスタグラム',
-                    link: '#',
+                    link: `${domain}404.html`,
                 },
                 {
                     title: '<i class="fa-brands fa-twitter"></i>ツイッター',
-                    link: '#',
+                    link: `${domain}404.html`,
                 }
             ]
         }

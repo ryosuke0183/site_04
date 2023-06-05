@@ -6,16 +6,11 @@ append value
     -const path = '.'
 
 block main
-    main.index
-        .mv
-            h1.mv__h1 HELLO RECORD
-            picture.mv__picture
-                source.mv__source(srcset=`${imgPath}mv/main_pc_1.jpg` media="(min-width:640px)")
-                img.mv__img(src=`${imgPath}mv/main_1.jpg` alt="レコードの写真")
+    main.articles-page.404-page
         .main
             .main__inner.cols
                 .cols__l
-                    include ./includes/_articles
+                    h1.articles-page__h1 ただいま、準備中です...
                 .cols__r
                     include ./includes/_sidebars
 

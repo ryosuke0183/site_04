@@ -1,0 +1,8 @@
+section.sidebars
+    h2.sidebars__h2.h2 REGULAR
+    p.sidebars__h2-subtitle.h2-subtitle レギュラー
+    .sidebars__inner: each sidebar in confSidebar
+        .sidebars__sidebar
+            a.sidebars__link(href=`${domain}sidebars/index.html`)
+                img.sidebars__img(src=`${sidebar.img}` alt="")
+                h3.sidebars__h3 #{sidebar.title}

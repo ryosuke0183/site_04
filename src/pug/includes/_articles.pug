@@ -1,0 +1,13 @@
+section.articles
+    h2.articles__h2.h2 PICKUP
+    p.articles__h2-subtitle.h2-subtitle ピックアップ
+    .articles__inner: each article in confArticles
+        article.articles__article.article
+            a.article__link(href=`${domain}articles/index.html`)
+                .article__img-wrapper
+                    img.article__img(src=`${article.img}` alt="レコードの写真")
+                h3.article__h3 #{article.title}
+                ul.article__ul: each tag in article.tags
+                    li.article__li #{tag}
+    .articles__btn
+        a.btn(href=`${domain}articles/index.html`) MORE

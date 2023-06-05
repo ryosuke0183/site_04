@@ -4,24 +4,30 @@ main {
     overflow-x: hidden;
 }
 
-.index {
+.main {
+    margin-top: 90px;
+
     &__inner {
         margin-bottom: 120px;
         @include inner(600px);
+    }
+}
 
+.cols {
+    @include mediaMin(xl) {
+        display: flex;
+        @include inner(1720px);
+    }
+
+    &__l {
         @include mediaMin(xl) {
-            display: flex;
-            @include inner(1720px);
+            flex: 0 0 percentage(div(1100, 1720));
+            margin-right: 100px;
         }
     }
 }
 
 .articles {
-    @include mediaMin(xl) {
-        flex: 0 0 percentage(div(1100, 1720));
-        margin-right: 100px;
-    }
-
     &__h2,
     &__h2-subtitle {
         text-align: center;

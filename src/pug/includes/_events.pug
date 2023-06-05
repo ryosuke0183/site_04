@@ -1,0 +1,10 @@
+section.events
+    .events__inner
+        h2.events__h2.h2 EVENTS
+        p.events__h2-subtitle.h2-subtitle イベント
+        ul.events__slider.slider: each event in confEvents
+            li.slider__list
+                a.slider__link(href=`${domain}events/index.html`)
+                    img.slider__img(src=`${event.img}` alt="イベント情報")
+                    time.slider__time #{event.time}
+                    h3.slider__h3 #{event.title}
